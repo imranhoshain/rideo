@@ -236,3 +236,44 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 .tinv-wraper .tinvwl-icon-heart:hover {
   background: #ff6600;
 }
+
+.pagnation-ul li span.current {
+    margin: 5px 15px;
+    display: block;
+}
+
+.custom-select span{
+    margin-right: 5px;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 8px;
+}
+.shop-menu .right p{
+    top: 5px;
+}
+.custom-select select {
+    padding: 4px 20px;
+}
+
+.shop-menu.margin-close {
+    margin-top: 0;
+}
+.woocommerce .woocommerce-ordering {
+    margin: 0 0 0;
+}
+
+.woocommerce a.added_to_cart{
+    display: none;
+}
+ .woocommerce a.button.added::after{
+    content: "";
+ }
+
+ .product-content .col-md-9 > .berocket_lgv_widget {
+    display: none;
+}
+
+.shop-menu .tab-menu a.selected {
+    border-color: #777;
+    color: #1b1b1b;
+}

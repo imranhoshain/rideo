@@ -48,7 +48,9 @@ do_action( 'woocommerce_before_main_content' );
 	?>
 </header>
 
-
+<section class="product-content section-padding">
+<div class="container">
+<div class="row">
 <?php 
 /**
  * Hook: woocommerce_sidebar.
@@ -60,6 +62,31 @@ do_action( 'woocommerce_sidebar' );
 
 
 <div class="col-md-9">
+<div class="shop-menu clearfix">
+	<div class="left floatleft">
+	    <div class="tab-menu view-mode berocket_lgv_widget">
+			<a class="gird berocket_lgv_set berocket_lgv_button_grid selected" data-type="grid" href="#"><i class="fa fa-th"></i></a>
+			<a class="list berocket_lgv_set berocket_lgv_button_list" data-type="list" href="#"><i class="fa fa-bars"></i></a>
+		</div>
+	</div>
+	<div class="right floatright">
+		<ul>
+			<li>
+				<div class="custom-select">
+					<?php rideo_woocommerce_catalog_page_ordering(); ?>
+				</div>				
+			</li>
+			<li>
+				<div class="custom-select">
+					<?php woocommerce_catalog_ordering(); ?>
+				</div>
+				<p>Short By</p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
 <?php
 
 if ( have_posts() ) {
@@ -107,6 +134,18 @@ if ( have_posts() ) {
 	do_action( 'woocommerce_no_products_found' );
 }
 ?>
+
+<div class="shop-menu clearfix margin-close">
+	<div class="left floatleft">		
+		<div class="tab-menu view-mode berocket_lgv_widget">
+			<a class="gird berocket_lgv_set berocket_lgv_button_grid selected" data-type="grid" href="#"><i class="fa fa-th"></i></a>
+			<a class="list berocket_lgv_set berocket_lgv_button_list" data-type="list" href="#"><i class="fa fa-bars"></i></a>
+		</div>	
+	</div>
+	<div class="right floatright text-center">
+		<?php rideo_product_pagination(); ?>
+	</div>
+	</div>
 </div>
 <?php
 /**
@@ -114,8 +153,10 @@ if ( have_posts() ) {
  *
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
-do_action( 'woocommerce_after_main_content' );
+do_action( 'woocommerce_after_main_content' );?>
 
-
-
+</div>
+</div>
+</section>
+<?php
 get_footer( 'shop' );

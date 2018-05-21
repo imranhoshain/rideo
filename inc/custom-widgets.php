@@ -15,6 +15,17 @@ function rideo_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	//Woocommerce left sidebaar
+	register_sidebar( array(
+		'name'          => esc_html__( 'WooCommerce Left Sidebar', 'rideo' ),
+		'id'            => 'woo_left_sidebar',
+		'description'   => esc_html__( 'Add widgets here.', 'rideo' ),
+		'before_widget' => '<div class="category single-side">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="sidebar-title"><h3>',
+		'after_title'   => '</h3></div>',
+	) );
     
     //footer Widget
     register_sidebar( array(

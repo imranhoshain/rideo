@@ -20,6 +20,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 ?>
-<section class="product-content section-padding">
-<div class="container">
-<div class="row">
