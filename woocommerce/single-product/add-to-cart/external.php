@@ -1,8 +1,8 @@
 <?php
 /**
- * Product Loop Start
+ * External product add to cart
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/loop/loop-start.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product/add-to-cart/external.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -13,11 +13,16 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.3.0
+ * @version     2.1.0
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-?>
 
+do_action( 'woocommerce_before_add_to_cart_button' ); ?>
+
+<p class="cart">
+	<a href="<?php echo esc_url( $product_url ); ?>" rel="nofollow" class="single_add_to_cart_button button alt"><?php echo esc_html( $button_text ); ?></a>
+</p>
+
+<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>

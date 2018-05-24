@@ -27,7 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 
-$item_colm = 'col-xs-12 col-sm-4';
+$item_colm = 'related-item col-xs-12 col-sm-4';
 ?>
 <div <?php post_class($item_colm); ?>>
 

@@ -86,7 +86,7 @@ do_action( 'woocommerce_sidebar' );
 	</div>
 </div>
 
-
+<div class="single-products row">
 <?php
 
 if ( have_posts() ) {
@@ -134,7 +134,7 @@ if ( have_posts() ) {
 	do_action( 'woocommerce_no_products_found' );
 }
 ?>
-
+</div>
 <div class="shop-menu clearfix margin-close">
 	<div class="left floatleft">		
 		<div class="tab-menu view-mode berocket_lgv_widget">
