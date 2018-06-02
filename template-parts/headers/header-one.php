@@ -13,26 +13,26 @@ $enable_search = cs_get_option('enable_search');
 						<div class="col-xs-12">
 							<div class="left floatleft">
 								<ul>
-									<?php 
-							$header_top_left = cs_get_option('header_top_array');							
-							if(!empty($header_top_left)) :
-						?>
-						<?php foreach ($header_top_left as $header_top_left_style ) :
+							<?php 
+								$header_top_left = cs_get_option('header_top_array');						
+								if(!empty($header_top_left)) :
+							?>
+							<?php foreach ($header_top_left as $header_top_left_style ) :
 							 ?>
 							 <li><i style="color:<?php echo $header_top_left_style['icon_color']; ?>" class="<?php echo $header_top_left_style['header_icon']; ?>"></i> 
 										<?php echo $header_top_left_style['header_sub_title'] ?> </li>
 							<?php endforeach; ?>
 						
-					<?php endif; ?>
-									
+							<?php endif; ?>									
 								</ul>
 							</div>
 							<div class="right floatright">
 								<ul>
-									<li>										<?php if($enable_search != false) :										 get_search_form();
-
+									<li>										
+										<?php if($enable_search != false) :	
+										 get_search_form();
 										endif;
-										  ?>									
+										  ?>				
 									</li>
 									<li>
 										<i class="fa fa-user"></i> 
@@ -68,9 +68,7 @@ $enable_search = cs_get_option('enable_search');
 								                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
 								                'walker'            => new wp_bootstrap_navwalker())
 								            );
-								        ?>
-							
-									
+								        ?>								
 								</nav>
 							</div>
 							<!-- mobile menu start -->
@@ -96,28 +94,16 @@ $enable_search = cs_get_option('enable_search');
 							<!-- mobile menu end -->
 							<div class="cart-menu-area floatright">
 								<ul>
-									<li><a href="#"><i class="pe-7s-shopbag"></i> <span>2</span></a>
+									<li>
+										<a href="<?php echo wc_get_cart_url(); ?>"><i class="pe-7s-shopbag"></i> <span><?php echo sprintf ( WC()->cart->get_cart_contents_count() ); ?></span></a>
 										<ul class="cart-menu">
-											<li>
-												<a href="cart.html"><img src="img/cart/1.png" alt="" /></a>
+											<li>												
 												<div class="cart-menu-title">
-													<a href="cart.html"><h5>Mount POW C058 FG </h5></a>
-													<span>1 x $2500</span>
-												</div>
-												<span class="cancel-item"><i class="fa fa-close"></i></span>
-											</li>
-											<li>
-												<a href="cart.html"><img src="img/cart/1.png" alt="" /></a>
-												<div class="cart-menu-title">
-													<a href="cart.html"><h5>Mount POW C058 FG </h5></a>
-													<span>1 x $2500</span>
-												</div>
-												<span class="cancel-item"><i class="fa fa-close"></i></span>
-											</li>
-											<li class="cart-menu-btn">
-												<a href="cart.html">view cart</a>
-												<a href="checkout.html">checkout</a>
-											</li>
+													<a href="<?php echo wc_get_cart_url(); ?>"><h5><?php _e( 'View your shopping cart' ); ?> </h5></a>
+													<span><?php echo WC()->cart->get_cart_total(); ?></span>
+												</div>												
+											</li>				
+											
 										</ul>
 									</li>
 								</ul>

@@ -35,6 +35,8 @@ if ( ! function_exists( 'rideo_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+
+
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
@@ -117,6 +119,11 @@ function rideo_woocommerce_support() {
             'max_columns'     => 5,
         ),
 	) );
+
+//Woocommerce lightbox Function
+	add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'after_setup_theme', 'rideo_woocommerce_support' );
 
@@ -160,3 +167,4 @@ include_once (get_template_directory().'/inc/woocommerce.php');
  * Themeoptions and metabox functions.
  */
 include_once (get_template_directory().'/inc/woocommerce-function.php');
+
