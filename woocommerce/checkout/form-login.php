@@ -19,7 +19,12 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+?>
 
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+<?php
 if ( is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_checkout_login_reminder' ) ) {
 	return;
 }
@@ -37,3 +42,6 @@ woocommerce_login_form(
 );
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
+?>
+
+</div></div></div>

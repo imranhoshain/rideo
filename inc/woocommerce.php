@@ -34,7 +34,6 @@ function woo_remove_wc_breadcrumbs() {
 }
 
 
-
 //Add action Function
 add_action( 'woocommerce_shop_loop_item_title', 'rideo_template_loop_product_title', 10);
 

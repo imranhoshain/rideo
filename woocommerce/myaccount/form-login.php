@@ -28,11 +28,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
+
 <div class="u-columns col2-set" id="customer_login">
 
-	<div class="u-column1 col-1">
+	
 
 <?php endif; ?>
+<section class="login-page section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">						
+							<div class="single-check">
 
 		<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
 
@@ -51,17 +57,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php do_action( 'woocommerce_login_form' ); ?>
 
-			<p class="form-row">
+											
+												
+			
+								
+							
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-				<button type="submit" class="woocommerce-Button button" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php esc_html_e( 'Login', 'woocommerce' ); ?></button>
-				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+			<div class="row"><div class="col-xs-12"><div class="submit-text">	<button type="submit" class="woocommerce-Button button" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php esc_html_e( 'Login', 'woocommerce' ); ?></button></div></div>
+				<!-- <label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
 					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e( 'Remember me', 'woocommerce' ); ?></span>
-				</label>
-			</p>
-			<p class="woocommerce-LostPassword lost_password">
-				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
-			</p>
-
+				</label> -->			
+			
+			</div>	
+			<div class="forget">
+				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Forget your password?', 'woocommerce' ); ?></a>
+			</div>
+			
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
 
 		</form>
@@ -69,8 +80,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
 	</div>
+</div>
 
-	<div class="u-column2 col-2">
+	
+		<div class="col-sm-6">						
+							<div class="single-check">
 
 		<h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
 
@@ -111,10 +125,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
 
 		</form>
+</div></div>
 
+</div></div></section>
 	</div>
 
-</div>
+
+
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_after_customer_login_form' ); ?>

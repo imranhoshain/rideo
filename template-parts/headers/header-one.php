@@ -96,14 +96,12 @@ $enable_search = cs_get_option('enable_search');
 								<ul>
 									<li>
 										<a href="<?php echo wc_get_cart_url(); ?>"><i class="pe-7s-shopbag"></i> <span><?php echo sprintf ( WC()->cart->get_cart_contents_count() ); ?></span></a>
-										<ul class="cart-menu">
-											<li>												
-												<div class="cart-menu-title">
-													<a href="<?php echo wc_get_cart_url(); ?>"><h5><?php _e( 'View your shopping cart' ); ?> </h5></a>
-													<span><?php echo WC()->cart->get_cart_total(); ?></span>
-												</div>												
-											</li>				
-											
+										<ul class="cart-menu <?php echo esc_attr( $args['list_class'] ); ?>">																							
+												
+													<?php get_template_part('woocommerce/cart/mini-cart'); ?>	
+													
+																							
+																						
 										</ul>
 									</li>
 								</ul>

@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		esc_url( wc_get_endpoint_url( 'edit-account' ) )
 	);
 ?></p>
-
+</div></div>
 <?php
 	/**
 	 * My Account dashboard.

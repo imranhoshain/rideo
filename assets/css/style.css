@@ -549,7 +549,7 @@ ul.mega-menu > li {
 .cart-menu-title {
     background: #fff none repeat scroll 0 0;
     overflow: hidden;
-    padding: 23px 0 22.5px 15px;
+    padding: 10px 0 22.5px 15px;
 }
 .cart-menu > li {
     float: none;
@@ -564,7 +564,7 @@ ul.mega-menu > li {
     font-size: 10px;
     height: 15px;
     line-height: 13px;
-    margin-top: -7px;
+    margin-top: -10px;
     position: absolute;
     right: 10.2px;
     text-align: center;

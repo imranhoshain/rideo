@@ -25,7 +25,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
-	<ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
+	
 		<?php
 			do_action( 'woocommerce_before_mini_cart_contents' );
 
@@ -39,10 +39,10 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 					$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					?>
-					<li class="woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
+					<li class="<?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', '', $cart_item, $cart_item_key ) ); ?>">
 						<?php
 						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-							'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
+							'<span class="cancel-item"><a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><i class="fa fa-close"></i></a></span>',
 							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 							__( 'Remove this item', 'woocommerce' ),
 							esc_attr( $product_id ),
@@ -50,16 +50,16 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 							esc_attr( $_product->get_sku() )
 						), $cart_item_key );
 						?>
-						<?php if ( ! $_product->is_visible() ) : ?>
-							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name . '&nbsp;'; ?>
+						<?php if ( empty( $product_permalink ) ) : ?>
+							<?php echo $thumbnail . $product_name . '&nbsp;'; ?>
 						<?php else : ?>
 							<a href="<?php echo esc_url( $product_permalink ); ?>">
-								<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name . '&nbsp;'; ?>
+								<?php echo $thumbnail . '&nbsp;'; ?>
 							</a>
 						<?php endif; ?>
 						<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
 
-						<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+						<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<div class="cart-menu-title">'.'<a href="'.$product_permalink.'"><h5>'. $product_name .'</h5></a>'.'<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span></div>', $cart_item, $cart_item_key ); ?>
 					</li>
 					<?php
 				}
@@ -67,13 +67,13 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 			do_action( 'woocommerce_mini_cart_contents' );
 		?>
-	</ul>
+	
 
-	<p class="woocommerce-mini-cart__total total"><strong><?php _e( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+	<!-- <p class="woocommerce-mini-cart__total total"><strong><?php _e( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p> -->
 
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
-	<p class="woocommerce-mini-cart__buttons buttons"><?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?></p>
+	<li class="cart-menu-btn"><?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?></li>
 
 <?php else : ?>
 
